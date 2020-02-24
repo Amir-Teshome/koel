@@ -91,4 +91,8 @@ class DataController extends Controller
                 : Application::KOEL_VERSION,
         ]);
     }
+
+    public function mobileData(Request $request){
+        return response()->json($this->mediaCacheService->get());
+    }
 }

@@ -26,6 +26,7 @@ Route::group(['namespace' => 'API'], function () {
         })->name('broadcasting.auth');
 
         Route::get('data', 'DataController@index');
+        Route::get('mobiledata', 'DataController@mobileData');
 
         Route::post('settings', 'SettingController@store');
 
