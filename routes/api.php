@@ -6,6 +6,8 @@ Route::group(['namespace' => 'API'], function () {
     Route::post('me', 'AuthController@login')->name('auth.login');
     Route::delete('me', 'AuthController@logout');
 
+    Route::resource('user', 'UserController', ['only' => ['store', 'update', 'destroy']]);
+
     Route::group(['middleware' => 'jwt.auth'], function () {
         Route::get('/ping', function () {
             // Just acting as a ping service.
@@ -51,7 +53,7 @@ Route::group(['namespace' => 'API'], function () {
         Route::get('playlist/{playlist}/songs', 'PlaylistController@getSongs')->where(['playlist' => '\d+']);
 
         // User and user profile routes
-        Route::resource('user', 'UserController', ['only' => ['store', 'update', 'destroy']]);
+        // Route::resource('user', 'UserController', ['only' => ['store', 'update', 'destroy']]);
         Route::get('me', 'ProfileController@show');
         Route::put('me', 'ProfileController@update');
 

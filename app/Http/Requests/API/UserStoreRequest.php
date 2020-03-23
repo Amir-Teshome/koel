@@ -11,7 +11,8 @@ class UserStoreRequest extends Request
 {
     public function authorize(): bool
     {
-        return auth()->user()->is_admin;
+        return true;
+        //return auth()->user()->is_admin;
     }
 
     public function rules(): array
