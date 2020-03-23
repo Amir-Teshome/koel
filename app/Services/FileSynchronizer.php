@@ -249,8 +249,9 @@ class FileSynchronizer
     {
         // As directory scanning can be expensive, we cache and reuse the result.
         return $this->cache->remember(md5($this->filePath.'_cover'), 24 * 60, function (): ?string {
-            $matches = array_keys(iterator_to_array(
-                $this->finder->create()
+            $matches = array_keys(
+                iterator_to_array(
+                    $this->finder->create()
                     ->depth(0)
                     ->ignoreUnreadableDirs()
                     ->files()
