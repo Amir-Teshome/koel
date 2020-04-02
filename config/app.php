@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'tagline' => 'Personal audio streaming service that works.',
+    'tagline' => 'Daawa salafia in Habesha audio streaming service.',
 
     'env' => env('APP_ENV', 'production'),
 
